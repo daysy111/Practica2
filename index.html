@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      width: 280px;
+      height: 320px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      color: white;
+      backface-visibility: hidden;
+    }
+
+    /* Frente */
+    .card-front .card-content {
+      width: 100%;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    /* Reverso (misma info que el frente) */
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    .card-back .card-content {
+      width: 100%;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .card-button {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #00c6ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .card-button:hover {
+      transform: scale(1.2);
+    }
+
+    /* Imágenes */
+    .card:nth-child(1) .card-front,
+    .card:nth-child(1) .card-back {
+      background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=60');
+    }
+
+    .card:nth-child(2) .card-front,
+    .card:nth-child(2) .card-back {
+      background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60');
+    }
+
+    .card:nth-child(3) .card-front,
+    .card:nth-child(3) .card-back {
+      background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=60');
+    }
+  </style>
+</head>
+<body>
+  <h1>Página Principal</h1>
+
+  <div class="container">
+    <!-- Tarjeta 1 -->
+    <div class="card" onclick="window.location.href='page01.html'">
+      <div class="card-inner">
+        <!-- Frente -->
+        <div class="card-face card-front">
+          <div class="card-content">
+            <h3 class="card-title">Page01</h3>
+            <p class="card-description">Ventana de trabajo page 01.</p>
+            <a href="page01.html" class="card-button">></a>
+          </div>
+        </div>
+        <!-- Reverso -->
+        <div class="card-face card-back">
+          <div class="card-content">
+            <h3 class="card-title">Page01</h3>
+            <p class="card-description">Ventana de trabajo page 01.</p>
+            <a href="page01.html" class="card-button">></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="card" onclick="window.location.href='page02.html'">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <div class="card-content">
+            <h3 class="card-title">Page02</h3>
+            <p class="card-description">Ventana de trabajo page 02.</p>
+            <a href="page02.html" class="card-button">></a>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-content">
+            <h3 class="card-title">Page02</h3>
+            <p class="card-description">Ventana de trabajo page 02.</p>
+            <a href="page02.html" class="card-button">></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="card" onclick="window.location.href='page03.html'">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <div class="card-content">
+            <h3 class="card-title">Page03</h3>
+            <p class="card-description">Ventana de trabajo page 03.</p>
+            <a href="page03.html" class="card-button">></a>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-content">
+            <h3 class="card-title">Page03</h3>
+            <p class="card-description">Ventana de trabajo page 03.</p>
+            <a href="page03.html" class="card-button">></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
