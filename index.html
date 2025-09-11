@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,24 +66,18 @@
     }
 
     /* Frente */
-    .card-front .card-content {
-      width: 100%;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-    }
-
-    /* Reverso (misma info que el frente) */
-    .card-back {
-      transform: rotateY(180deg);
-    }
+    .card-front .card-content,
     .card-back .card-content {
       width: 100%;
       padding: 20px;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.5); /* más transparente que antes */
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
+      color: #fff; /* forzamos blanco */
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
     }
 
     .card-title {
@@ -99,25 +92,25 @@
     }
 
     .card-button {
-      display: inline-block;
+      display: inline-flex;
       width: 40px;
       height: 40px;
       background-color: #00c6ff;
       border-radius: 50%;
-      display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-weight: bold;
       text-decoration: none;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .card-button:hover {
       transform: scale(1.2);
+      background-color: #0072ff;
     }
 
-    /* Imágenes */
+    /* Imágenes de las tarjetas */
     .card:nth-child(1) .card-front,
     .card:nth-child(1) .card-back {
       background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=60');
@@ -132,6 +125,13 @@
     .card:nth-child(3) .card-back {
       background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=60');
     }
+
+    /* Ajuste para que el texto no se pierda en las imágenes */
+    .card-content h3,
+    .card-content p {
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
   </style>
 </head>
 <body>
@@ -141,7 +141,6 @@
     <!-- Tarjeta 1 -->
     <div class="card" onclick="window.location.href='page01.html'">
       <div class="card-inner">
-        <!-- Frente -->
         <div class="card-face card-front">
           <div class="card-content">
             <h3 class="card-title">Page01</h3>
@@ -149,7 +148,6 @@
             <a href="page01.html" class="card-button">></a>
           </div>
         </div>
-        <!-- Reverso -->
         <div class="card-face card-back">
           <div class="card-content">
             <h3 class="card-title">Page01</h3>
@@ -202,6 +200,3 @@
   </div>
 </body>
 </html>
-=======
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Index</title></head><body><h1>Hola desde index.html</h1><a href="page01.html">Ir a Page01</a></body></html>
->>>>>>> 3ec9ea7cf1fcd4b7dee50a25e3ae46a4aa513568
