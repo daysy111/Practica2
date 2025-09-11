@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -354,3 +355,285 @@
     </script>
   </body>
 </html>
+=======
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario con Animaciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Barra superior con iconos SVG */
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: #aaa;
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            fill: #fff;
+        }
+
+        /* Formulario */
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        input[type="text"], select, .image-input {
+            width: 100%;
+            padding: 10px;
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, select:focus, .image-input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+        }
+
+        input[type="text"].focused ~ label,
+        select.focused ~ label,
+        .image-input.focused ~ label {
+            transform: translateY(-100%);
+            font-size: 12px;
+            color: #007BFF;
+        }
+
+        input[type="text"]:focus ~ label,
+        select:focus ~ label,
+        .image-input:focus ~ label {
+            transform: translateY(-100%);
+            font-size: 12px;
+            color: #007BFF;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .clear {
+            background-color: #6c757d;
+        }
+
+        .clear:hover {
+            background-color: #545b62;
+        }
+
+        /* Campo de imagen */
+        .image-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2d2d2d;
+            border: 1px dashed #444;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .image-input svg {
+            width: 30px;
+            height: 30px;
+            fill: #aaa;
+        }
+
+        .image-input:hover {
+            background-color: #3a3a3a;
+        }
+
+        .image-input.active {
+            border-color: #007BFF;
+            background-color: #3a3a3a;
+        }
+
+        .file-path {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra superior con iconos SVG -->
+        <div class="header">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+
+        <!-- Formulario -->
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="item">Item</label>
+                <select id="item" name="item">
+                    <option value="">Selecciona una opción</option>
+                    <option value="opcion1">Opción 1</option>
+                    <option value="opcion2">Opción 2</option>
+                    <option value="opcion3">Opción 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Image</label>
+                <div class="image-input" id="imageInput">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div class="file-path" id="filePath"></div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agree" name="agree">
+                <label for="agree">Do you agree?</label>
+            </div>
+
+            <div>
+                <button type="submit" class="button">SUBMIT</button>
+                <button type="reset" class="button clear">CLEAR</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Animación de labels al hacer focus
+        document.querySelectorAll('input[type="text"], select').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.classList.add('focused');
+            });
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.classList.remove('focused');
+                }
+            });
+        });
+
+        // Campo de imagen con drag and drop
+        const imageInput = document.getElementById('imageInput');
+        const filePath = document.getElementById('filePath');
+
+        imageInput.addEventListener('click', () => {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+            fileInput.style.display = 'none';
+            fileInput.onchange = e => {
+                const file = e.target.files[0];
+                if (file) {
+                    filePath.textContent = file.name;
+                    imageInput.classList.add('active');
+                }
+            };
+            fileInput.click();
+        });
+
+        imageInput.addEventListener('dragover', e => {
+            e.preventDefault();
+            imageInput.style.backgroundColor = '#3a3a3a';
+        });
+
+        imageInput.addEventListener('dragleave', () => {
+            imageInput.style.backgroundColor = '#2d2d2d';
+        });
+
+        imageInput.addEventListener('drop', e => {
+            e.preventDefault();
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                filePath.textContent = file.name;
+                imageInput.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+>>>>>>> 3ec9ea7cf1fcd4b7dee50a25e3ae46a4aa513568
